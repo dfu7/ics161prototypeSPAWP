@@ -48,10 +48,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioClip> _SFXClips = new List<AudioClip>();
     [SerializeField] private AudioSource currentMusic;
     [SerializeField] private AudioSource currentSFX;
-    // Mute Toggles
-    [SerializeField] public Toggle muteMaster;
-    [SerializeField] public Toggle muteMusic;
-    [SerializeField] public Toggle muteSFX;
     // Volume Sliders
     [SerializeField] public Slider sliderMaster;
     [SerializeField] public Slider sliderMusic;
@@ -64,9 +60,6 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        muteMaster.isOn = false;
-        muteMusic.isOn = false;
-        muteSFX.isOn = false;
         _mixer.GetFloat("SFX", out _sfxVol);
     }
     #region Playing Audio
@@ -153,71 +146,6 @@ public class AudioManager : MonoBehaviour
     public void SetSFXVolume(float volume) // 0.0001 - 1.0
     {
         _mixer.SetFloat("SFX", Mathf.Log10(volume)*20);
-    }
-    // Master-muting function that, by design, disables all slider volume controls.
-    // You can manually untoggle other audio functionalities and tinker with volume control (if you want).
-    // Saves volume states before and after.
-    public void MuteMaster(bool _audio)
-    {
-        if(_audio)
-        {
-            // Disable all sliders
-            sliderMaster.interactable = false;
-            sliderMusic.interactable = false;
-            sliderSFX.interactable = false;
-            muteMusic.isOn = true;
-            muteSFX.isOn = true;
-            float _currentMasterVol;
-            _mixer.GetFloat("Master", out _currentMasterVol);
-            PlayerPrefs.SetFloat("SavedMasterVol", _currentMasterVol);
-            _mixer.SetFloat("Master", -80f);
-        }
-        else
-        {
-            // Enable all sliders
-            sliderMaster.interactable = true;
-            sliderMusic.interactable = true;
-            sliderSFX.interactable = true;
-            muteMusic.isOn = false;
-            muteSFX.isOn = false;
-            _mixer.SetFloat("Master", PlayerPrefs.GetFloat("SavedMasterVol"));
-        }
-    }
-    // Music-muting function that disables only the music slider volume control.
-    // Saves volume states before and after.
-    public void MuteMusic(bool _audio)
-    {
-        if(_audio)
-        {
-            float _currentMusicVol;
-            sliderMusic.interactable = false;
-            _mixer.GetFloat("Music", out _currentMusicVol);
-            PlayerPrefs.SetFloat("SavedMusicVol", _currentMusicVol);
-            _mixer.SetFloat("Music", -80f);
-        }
-        else
-        {
-            sliderMusic.interactable = true;
-            _mixer.SetFloat("Music", PlayerPrefs.GetFloat("SavedMusicVol"));
-        }
-    }
-    // SFX-muting function that disables only the sfx slider volume control.
-    // Saves volume states before and after.
-    public void MuteSFX(bool _audio)
-    {
-        if(_audio)
-        {
-            float _currentSFXVol;
-            sliderSFX.interactable = false;
-            _mixer.GetFloat("SFX", out _currentSFXVol);
-            PlayerPrefs.SetFloat("SavedSFXVol", _currentSFXVol);
-            _mixer.SetFloat("SFX", -80f);
-        }
-        else
-        {
-            sliderSFX.interactable = true;
-            _mixer.SetFloat("SFX", PlayerPrefs.GetFloat("SavedSFXVol"));
-        }
     }
     #endregion
 }
