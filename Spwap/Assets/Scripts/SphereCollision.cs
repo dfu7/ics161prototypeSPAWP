@@ -10,7 +10,13 @@ public class SphereCollision : MonoBehaviour
         {
             // increase score
             Debug.Log("Increase Score");
+            Score.score += 1;
             Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "win area")
+        {
+            // win
+            Debug.Log("end game");
         }
         else
         {
