@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerMat: {fileID: 2100000, guid: 1e293e649a73b0047a0b7eeeb698f581, type: 2}
   rotateMat: {fileID: 2100000, guid: a1694909dd6c9a04280cb9b24bcf6ad2, type: 2}
-  controls: {fileID: 3539193913515041364}
+  Player: {fileID: 3539193913515041364}
   sphere1: {fileID: 3539193911952252510}
   connector: {fileID: 3539193913770068309}
   sphere2: {fileID: 3539193913568909422}
