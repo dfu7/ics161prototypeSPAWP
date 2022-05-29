@@ -7,7 +7,6 @@ public class Swap : MonoBehaviour
     public Material centerMat;
     public Material rotateMat;
 
-    [SerializeField] public GameObject Player;
     [SerializeField] public GameObject sphere1;
     [SerializeField] public GameObject connector;
     [SerializeField] public GameObject sphere2;
