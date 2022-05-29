@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3539193911952252510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.942719, y: 8.53852, z: -48.196682}
+  m_LocalPosition: {x: -2.8650198, y: 0, z: -1.2000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3539193913515041367}
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3539193911952252510}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c317fbb9850b44f4fa15447118c90c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawn: {fileID: 0}
 --- !u!1 &3539193913515041364
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,11 +175,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerMat: {fileID: 2100000, guid: 1e293e649a73b0047a0b7eeeb698f581, type: 2}
   rotateMat: {fileID: 2100000, guid: a1694909dd6c9a04280cb9b24bcf6ad2, type: 2}
-  Player: {fileID: 0}
   sphere1: {fileID: 3539193911952252510}
   connector: {fileID: 3539193913770068309}
   sphere2: {fileID: 3539193913568909422}
-  rotationSpeed: 100
+  rotationSpeed: 300
 --- !u!114 &1271786674037937060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3539193913568909422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.258719, y: 8.53852, z: -48.196682}
+  m_LocalPosition: {x: -0.5490198, y: 0, z: -1.2000008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3539193913515041367}
@@ -301,7 +301,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3539193913568909422}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c317fbb9850b44f4fa15447118c90c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawn: {fileID: 0}
 --- !u!1 &3539193913770068309
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3539193913770068309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.107719, y: 8.53852, z: -48.196682}
+  m_LocalPosition: {x: -1.7, y: 0, z: -1.2}
   m_LocalScale: {x: 3.068599, y: 0.35342, z: 0.207275}
   m_Children: []
   m_Father: {fileID: 3539193913515041367}

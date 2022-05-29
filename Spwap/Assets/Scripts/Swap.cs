@@ -13,7 +13,7 @@ public class Swap : MonoBehaviour
 
     private Vector3 rotationPos;
 
-    private GameObject centerSphere;
+    public static GameObject centerSphere;
 
     public float rotationSpeed = 100;
 

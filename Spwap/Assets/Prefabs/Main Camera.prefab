@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6626d3b2a8ae6b945b84634d1d359449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothSpeed: 0.125
-  offset: {x: 0, y: 0, z: -20}
+  smoothSpeed: 50
+  offset: {x: 0, y: 0, z: -10}
   _main: {fileID: 0}
-  minValues: {x: -1, y: 17, z: -20}
-  maxValues: {x: 1203, y: 214, z: -20}
+  minValues: {x: 419, y: 17, z: -10}
+  maxValues: {x: 850, y: 225, z: -10}

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SphereCollision : MonoBehaviour
 {
+    [SerializeField] private PlayerSpawn _spawn;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "coin")
         {
             // increase score
-            Debug.Log("Increase Score");
             Score.score += 1;
             Destroy(collision.gameObject);
         }
@@ -21,7 +21,7 @@ public class SphereCollision : MonoBehaviour
         else
         {
             // respawn
-            Debug.Log("Respawn");
+            _spawn.respawn();
         }
     }
 }
