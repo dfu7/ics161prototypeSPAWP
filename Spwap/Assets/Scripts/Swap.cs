@@ -44,6 +44,9 @@ public class Swap : MonoBehaviour
 
             centerSphere = sphere1;
             rotationPos = sphere1.transform.position;
+
+            sphere2.GetComponent<SphereCollider>().enabled = false;
+            sphere1.GetComponent<SphereCollider>().enabled = true;
         }
         else if (centerSphere = sphere1)
         {
@@ -54,6 +57,9 @@ public class Swap : MonoBehaviour
 
             centerSphere = sphere2;
             rotationPos = sphere2.transform.position;
+
+            sphere1.GetComponent<SphereCollider>().enabled = false;
+            sphere2.GetComponent<SphereCollider>().enabled = true;
         }
     }
 }
