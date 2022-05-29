@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SphereCollision : MonoBehaviour
 {
-    [SerializeField] private PlayerSpawn _spawn;
+    [SerializeField] private SceneLoad _spawn;
+    [SerializeField] private GameObject _panel;
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "coin")
@@ -16,12 +17,13 @@ public class SphereCollision : MonoBehaviour
         else if (collision.gameObject.tag == "Finish")
         {
             // win
-            Debug.Log("end game");
+            _panel.SetActive(true);
+
         }
         else
         {
             // respawn
-            _spawn.respawn();
+            _spawn.LoadLevel(1);
         }
     }
 }

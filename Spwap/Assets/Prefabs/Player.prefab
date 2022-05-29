@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawn: {fileID: 0}
+  _panel: {fileID: 0}
 --- !u!1 &3539193913515041364
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +179,7 @@ MonoBehaviour:
   sphere1: {fileID: 3539193911952252510}
   connector: {fileID: 3539193913770068309}
   sphere2: {fileID: 3539193913568909422}
+  _panel: {fileID: 0}
   rotationSpeed: 300
 --- !u!114 &1271786674037937060
 MonoBehaviour:
@@ -335,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawn: {fileID: 0}
+  _panel: {fileID: 0}
 --- !u!1 &3539193913770068309
 GameObject:
   m_ObjectHideFlags: 0

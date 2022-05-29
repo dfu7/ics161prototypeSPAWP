@@ -6,9 +6,8 @@ using System;
 
 public class Score : MonoBehaviour
 {
-    public static int score;
-
     [SerializeField] TextMeshProUGUI scoreText;
+    public static int score;
 
     private void Awake()
     {

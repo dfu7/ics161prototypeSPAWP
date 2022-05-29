@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+    
+
+    [SerializeField]
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);

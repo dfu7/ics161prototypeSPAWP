@@ -10,15 +10,18 @@ public class Swap : MonoBehaviour
     [SerializeField] public GameObject sphere1;
     [SerializeField] public GameObject connector;
     [SerializeField] public GameObject sphere2;
+    [SerializeField] private GameObject _panel;
 
     private Vector3 rotationPos;
 
     public static GameObject centerSphere;
 
-    public float rotationSpeed = 100;
+    public float rotationSpeed;
+    private bool _check;
 
     private void Start()
     {
+        _check = false;
         centerSphere = sphere1;
         SwapSphere();
     }
@@ -27,10 +30,38 @@ public class Swap : MonoBehaviour
     {
         transform.RotateAround(rotationPos, -Vector3.forward, rotationSpeed * Time.deltaTime);
     }
+    public void changeRotationSpeed(float speed)
+    {
+        rotationSpeed = speed;
+    }
 
     public void OnSwap()
     {
         SwapSphere();
+    }
+    public void OnPause()
+    {
+        if(_check)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
+    }
+    public void Resume()
+    {
+        _panel.SetActive(false);
+        Time.timeScale = 1f;
+        _check = false;
+    }
+
+    public void Pause()
+    {  
+        _panel.SetActive(true);
+        Time.timeScale = 0f;
+        _check = true;
     }
     
     void SwapSphere()

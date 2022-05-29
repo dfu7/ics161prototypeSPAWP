@@ -100,4 +100,4 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -10}
   _main: {fileID: 0}
   minValues: {x: 419, y: 17, z: -10}
-  maxValues: {x: 850, y: 225, z: -10}
+  maxValues: {x: 850, y: 350, z: -10}
