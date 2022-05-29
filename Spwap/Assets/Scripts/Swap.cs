@@ -7,10 +7,12 @@ public class Swap : MonoBehaviour
     public Material centerMat;
     public Material rotateMat;
 
-    [SerializeField] public GameObject controls;
+    [SerializeField] public GameObject Player;
     [SerializeField] public GameObject sphere1;
     [SerializeField] public GameObject connector;
     [SerializeField] public GameObject sphere2;
+
+    private Vector3 rotationPos;
 
     private GameObject centerSphere;
 
@@ -18,48 +20,40 @@ public class Swap : MonoBehaviour
 
     private void Start()
     {
-        SwapParent();
+        centerSphere = sphere1;
+        SwapSphere();
     }
 
     private void Update()
     {
-        connector.transform.RotateAround(centerSphere.transform.position, -Vector3.forward, rotationSpeed * Time.deltaTime);
+        transform.RotateAround(rotationPos, -Vector3.forward, rotationSpeed * Time.deltaTime);
     }
 
     public void OnSwap()
     {
-        SwapParent();
+        SwapSphere();
     }
     
-    void SwapParent()
+    void SwapSphere()
     {
-        if (sphere1.transform.childCount == 0)
+        if (centerSphere == sphere2)
         {
-            sphere1.transform.SetParent(controls.transform);
-            connector.transform.SetParent(sphere1.transform);
-            sphere2.transform.SetParent(connector.transform);
-
             sphere1.GetComponent<MeshRenderer>().material = centerMat;
             sphere2.GetComponent<MeshRenderer>().material = rotateMat;
             connector.GetComponent<MeshRenderer>().material = rotateMat;
 
             centerSphere = sphere1;
-
-            Debug.Log("1");
+            rotationPos = sphere1.transform.position;
         }
-        else if (sphere2.transform.childCount == 0)
+        else if (centerSphere = sphere1)
         {
-            sphere2.transform.SetParent(controls.transform);
-            connector.transform.SetParent(sphere2.transform);
-            sphere1.transform.SetParent(connector.transform);
 
             sphere2.GetComponent<MeshRenderer>().material = centerMat;
             sphere1.GetComponent<MeshRenderer>().material = rotateMat;
             connector.GetComponent<MeshRenderer>().material = rotateMat;
 
             centerSphere = sphere2;
-
-            Debug.Log("2");
+            rotationPos = sphere2.transform.position;
         }
     }
 }
